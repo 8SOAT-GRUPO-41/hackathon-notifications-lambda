@@ -1,0 +1,48 @@
+service: notifications
+app: fiap-hackathon-g41
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  memorySize: 1536
+  timeout: 300
+  environment:
+    NOTIFICATIONS_SQS_ARN: ${param:NOTIFICATIONS_SQS_ARN}
+  role: ${param:LAB_ROLE_ARN}
+
+custom:
+  serverless-offline:
+    useChildProcesses: true
+    noPrependStageInUrl: true
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    exclude:
+      - 'prisma'
+      - '@prisma/client'
+      - 'aws-sdk'
+      - '@aws-sdk/*'
+    target: node20
+    define:
+      require.resolve: undefined
+    platform: node
+    concurrency: 10
+    watch:
+      pattern:
+        - src/**/*.ts
+
+functions:
+  notifications:
+    handler: src/handler.handler
+    events:
+      - sqs:
+          arn: ${self:provider.environment.NOTIFICATIONS_SQS_ARN}
+plugins:
+  - serverless-offline
+  - serverless-esbuild
+
+package:
+  individually: true
+  patterns:
+    - '!node_modules/**'

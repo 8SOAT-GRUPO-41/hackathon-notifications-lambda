@@ -1,0 +1,31 @@
+{
+  "name": "hackathon-notifications-lambda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8SOAT-GRUPO-41/hackathon-notifications-lambda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8SOAT-GRUPO-41/hackathon-notifications-lambda/issues"
+  },
+  "homepage": "https://github.com/8SOAT-GRUPO-41/hackathon-notifications-lambda#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.149",
+    "@types/node": "^22.14.1",
+    "esbuild": "^0.25.2",
+    "serverless": "^3.40.0",
+    "serverless-esbuild": "^1.55.0",
+    "serverless-offline": "^13.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+  }
+}
