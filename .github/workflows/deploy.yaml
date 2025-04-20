@@ -38,6 +38,11 @@ jobs:
             --verbose \
             --param="NOTIFICATIONS_SQS_ARN=${{ secrets.NOTIFICATIONS_SQS_ARN }}" \
             --param="LAB_ROLE_ARN=${{ secrets.LAB_ROLE_ARN }}" \
+            --param="SMTP_HOST=${{ secrets.SMTP_HOST }}" \
+            --param="SMTP_PORT=${{ secrets.SMTP_PORT }}" \
+            --param="SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}" \
+            --param="SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}" \
+            --param="SENDER_EMAIL=${{ secrets.SENDER_EMAIL }}"
         env:
           AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}

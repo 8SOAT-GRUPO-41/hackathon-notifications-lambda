@@ -1,0 +1,12 @@
+{
+  "Records": [
+    {
+      "messageId": "test-message-id-1",
+      "body": "{\"status\":\"COMPLETED\",\"videoId\":\"video-123\",\"videoName\":\"My Test Video\",\"notificationChannel\":\"EMAIL\",\"email\":\"test@example.com\"}"
+    },
+    {
+      "messageId": "test-message-id-2",
+      "body": "{\"status\":\"FAILED\",\"videoId\":\"video-456\",\"videoName\":\"Another Test Video\",\"notificationChannel\":\"EMAIL\",\"email\":\"test@example.com\",\"failureReason\":\"Encoding error at timestamp 01:23:45\"}"
+    }
+  ]
+} 

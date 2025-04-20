@@ -4,10 +4,15 @@ app: fiap-hackathon-g41
 provider:
   name: aws
   runtime: nodejs20.x
-  memorySize: 1536
-  timeout: 300
+  memorySize: 1024
+  timeout: 30
   environment:
     NOTIFICATIONS_SQS_ARN: ${param:NOTIFICATIONS_SQS_ARN}
+    SMTP_HOST: ${param:SMTP_HOST}
+    SMTP_PORT: ${param:SMTP_PORT}
+    SMTP_USERNAME: ${param:SMTP_USERNAME}
+    SMTP_PASSWORD: ${param:SMTP_PASSWORD}
+    SENDER_EMAIL: ${param:SENDER_EMAIL}
   role: ${param:LAB_ROLE_ARN}
 
 custom:
