@@ -11,5 +11,6 @@ export const config = {
     },
     sender: process.env.SENDER_EMAIL || "notifications@example.com",
   },
-  // Add other configuration sections as needed
+  frontendUrl:
+    "http://hackathon-g41-frontend-bucket.s3-website-us-east-1.amazonaws.com",
 };
